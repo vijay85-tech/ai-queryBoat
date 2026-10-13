@@ -228,7 +228,6 @@ def stream_agent(client: OpenAI, history: list[dict], collected: list[str], on_t
 
         # Har tool chalao aur result wapas messages mein daalo
         for c in calls:
-            on_tool(f"🔧 Step {step}: {c['name']}({c['arguments']})")
             result = run_tool(c["name"], c["arguments"])
             messages.append(
                 {
